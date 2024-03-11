@@ -4,6 +4,19 @@ namespace Learning
 {
     public class Program
     {
+
+        // ---------- FUNCTIONS DEFINITIONS --------
+
+        static void PrintArray(int[] ArrayName, string message)
+        {
+            foreach (var item in ArrayName)
+            {
+                Console.WriteLine($"{message} : {item}");
+            }
+        }
+
+        // END OF FUNCTIONS
+
         static void Main(string[] args)
         {
             /*Console.ForegroundColor = ConsoleColor.Blue;
@@ -71,7 +84,7 @@ namespace Learning
             Console.WriteLine("3 Decimals: {0:f3}", 23.4546);
             Console.WriteLine("Commmas: {0:n8}", 230000);*/
 
-            string randString = "Rojesh Shrestha";
+            /*string randString = "Rojesh Shrestha";
             Console.WriteLine($"String Length:{randString.Length}");
             Console.WriteLine("String Contains 'esh'?: {0}", randString.Contains("esh"));
             Console.WriteLine($"Index of 'esh' is {randString.IndexOf("esh")}");
@@ -90,7 +103,44 @@ namespace Learning
             Console.WriteLine("Padding Right: {0}", randString.PadRight(20, '.'));
             Console.WriteLine("Trim: {0}", randString.Trim());
             string newStr = String.Format("{0} saw a {1} {2} in the {3}", "Rojesh", "dog", "sleeping", "mat");
-            Console.WriteLine(newStr);
+            Console.WriteLine(newStr + " which seems cute");
+            // \' \' \\ \t \n
+            Console.WriteLine(@"I wrote exactly this\n");*/
+
+            // Arrays
+            int[] Nums = new int[3];
+            Nums = [1,2,3,4];
+            for (int i = 0; i < Nums.Length; i++)
+                Console.WriteLine(Nums[i]);
+
+            string[] customers = { "Rojesh", "Ram", "Sita" };
+            var employees = new[] { "Rojesh", "Ram", "Sita" };
+            for (int i = 0; i < customers.Length; i++)
+                Console.WriteLine($"Index:{i}\n Data: {customers[i]} \n");
+            Console.WriteLine("\n");
+            object[] random = { "Rojesh", 25675, true };
+            for (int i = 0; i < random.Length; i++)
+                Console.WriteLine(random[i].GetType());
+            Console.WriteLine("---------------------------------------------");
+            string[,] custNames = new string[3, 2] {
+                { "Rojesh", "Shrestha"},
+                { "Sachin", "Khadka"},
+                { "Bibek", "Jha"}
+            };
+            Console.WriteLine("Multi-Dimensional Array:\n");
+            for (int i = 0; i < 3; i++)
+            {
+                for(int j = 0; j<2; j++)
+                {
+                    Console.Write($"{custNames[i, j]} ");
+                }
+                Console.WriteLine("\n");
+            }
+            Console.WriteLine(custNames.GetValue(0, 0));
+
+
+            int[] randNums = { 1, 4, 9, 16 };
+            PrintArray(randNums, "hola mi'amore");
 
             Console.ReadLine();
 
