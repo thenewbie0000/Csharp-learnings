@@ -15,6 +15,15 @@ namespace Learning
             }
         }
 
+        static double DoDivision(double a, double b)
+        {
+            if (b == 0)
+            {
+                throw new System.DivideByZeroException();
+            }
+            return a / b;
+        }
+
         // END OF FUNCTIONS
 
         static void Main(string[] args)
@@ -108,7 +117,7 @@ namespace Learning
             Console.WriteLine(@"I wrote exactly this\n");*/
 
             // Arrays
-            int[] Nums = new int[3];
+            /*int[] Nums = new int[3];
             Nums = [1,2,3,4];
             for (int i = 0; i < Nums.Length; i++)
                 Console.WriteLine(Nums[i]);
@@ -140,7 +149,104 @@ namespace Learning
 
 
             int[] randNums = { 1, 4, 9, 16 };
-            PrintArray(randNums, "hola mi'amore");
+            PrintArray(randNums, "hola mi'amore");*/
+
+            /*Console.WriteLine("--------------------------------------");
+            int[] newArray = { 1, 24, 2, 25, 7, 8, 9, 3 };
+            Array.Sort(newArray);
+           *//* foreach (var item in newArray)
+            {
+                Console.WriteLine(item);
+            }
+            Array.Reverse(newArray);
+            foreach (var item in newArray)
+            {
+                Console.WriteLine(item);
+            }*//*
+            newArray.SetValue(6,0);
+            PrintArray(newArray, "");
+            int[] destinationArray = new int[3];
+            Array.Copy(newArray, destinationArray, 3);
+            PrintArray(destinationArray, "copied");
+            Array anotherArray = Array.CreateInstance(typeof(int), 10);
+            newArray.CopyTo(anotherArray, 0);
+            foreach (var item in anotherArray)
+            {
+                Console.WriteLine($"Copied to: {item}");
+            }
+            
+            int[] numArray = { 1, 11, 22, 33 };
+            Console.WriteLine(">10:" + Array.Find(numArray, n=> n>10));
+            */
+
+            /*int age;
+            Console.WriteLine("Enter her age:");
+            string strAge = Console.ReadLine();
+            age = int.Parse(strAge);
+            if (age > 18 && age <= 40)
+                Console.WriteLine("Marry her");
+            else if (age < 18)
+                Console.WriteLine("Oh Boy! You are in trouble");
+            else
+                Console.WriteLine("Dude! Have Patience");
+
+            string msg = age >= 18 ? "She can drive though" : "She can't drive";
+            Console.Write(msg);
+
+            string name1 = "Rojesh";
+            string name2 = "rojesh";
+            if (name1.Equals(name2, StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("\n\nequal");
+            }*/
+
+            /*int i = 1;
+            while (i<=10)
+            {
+                if (i%2 == 0)
+                {
+                    i++;
+                    continue;
+                }
+                Console.WriteLine(i);
+                i++;
+            }*/
+
+            /*Random rnd = new Random();
+            int secretNumber = rnd.Next(1, 11);
+            int numberGuessed;
+            Console.WriteLine("Enter number between 1 and 10:");
+            do
+            {
+                numberGuessed = Convert.ToInt32(Console.ReadLine());
+            } while (secretNumber != numberGuessed);
+            Console.Write("You guessed write");
+            */
+
+            double n1 = 5;
+            double n2 = 0;
+            try
+            {
+                Console.WriteLine("5/0 = {0}", DoDivision(n1, n2));
+            }
+            catch(DivideByZeroException ex)
+            {
+                Console.WriteLine("can't divide by zero");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+
+            }
+            // any exception
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR");
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Cleaning Up");
+            }
 
             Console.ReadLine();
 
