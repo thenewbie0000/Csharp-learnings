@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Text;
 
 namespace Learning
 {
@@ -223,7 +225,7 @@ namespace Learning
             Console.Write("You guessed write");
             */
 
-            double n1 = 5;
+            /*double n1 = 5;
             double n2 = 0;
             try
             {
@@ -246,7 +248,34 @@ namespace Learning
             finally
             {
                 Console.WriteLine("Cleaning Up");
-            }
+            }*/
+
+            // String Builders
+            /* StringBuilder sb1 = new StringBuilder("Random Text");
+             StringBuilder sb2 = new StringBuilder(" by Rojesh", 256);
+             Console.Write("Capacity: {0}\n", sb2.Capacity);
+             Console.Write("LENGTH: {0}\n", sb2.Length);
+             sb2.AppendLine("\n New Appended Line");
+             Console.WriteLine(sb2);
+             CultureInfo enUS = CultureInfo.CreateSpecificCulture("en-US");
+             string bestCust = "Rojesh Shrestha";
+             sb2.AppendFormat(enUS, "Best Customer: {0}", bestCust);
+             Console.WriteLine(sb2.ToString());
+             sb2.Replace("Text", "Characters");
+             Console.WriteLine(sb2.ToString());
+             sb2.Clear();*/
+
+            //string myString = "Rojesh \"Sama\" Shrestha";
+            //string myString = @"Go to your C:\Drive";
+            //string myString = string.Format("{0:C}", 123.45); 
+            //string myString = string.Format("{0:N}", 1234567890);
+            //string myString = string.Format("{0:P}", .69);
+            //string myString = string.Format("Phone Number: {0: (+###) ####-######}", 9779841123922);
+
+
+            Console.WriteLine(myString);
+
+
 
             Console.ReadLine();
 
