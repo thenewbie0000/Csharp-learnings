@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Globalization;
-using System.Text;
+using ObjectLifeTime;
 
 namespace Learning
 {
@@ -291,7 +290,7 @@ namespace Learning
             /*TimeSpan myAge = DateTime.Now.Subtract(myBirthday);
             Console.WriteLine(myAge.TotalDays);*/
 
-            Car myCar = new Car();
+            /*Car myCar = new Car();
 
             myCar.Make = "Old Version";
             myCar.Model = "Cutlas Supreme";
@@ -301,18 +300,35 @@ namespace Learning
             //decimal value = DetermineMarketvalue(myCar);
             //Console.WriteLine("{0:C}", value);
             Console.WriteLine("{0:C}", myCar.DetermineMarketValue());
+*/
+
+            /*Car myCar = new Car();
+
+           *//* myCar.Make = "OldModel";
+            myCar.Model = "Cutlas Supreme";
+            myCar.Year = 1969;
+            myCar.Color = "#000";*//*
+
+            Car myOtherCar;
+            myOtherCar = myCar;
+            myOtherCar.Year = 2002;
+            Console.WriteLine($"{myOtherCar.Make} {myOtherCar.Model} {myOtherCar.Year} {myOtherCar.Color}");
+            //myOtherCar = null;
+            //Console.WriteLine($"{myOtherCar.Make} {myOtherCar.Model} {myOtherCar.Year} {myOtherCar.Color}");*/
+            Car thirdCar = new Car("Ford", "Escape", 2005, "#fff");
+
 
             Console.ReadLine();
         }
 
-        private static decimal DetermineMarketvalue (Car car)
+        /*private static decimal DetermineMarketvalue (Car car)
         {
             decimal carValue = 10000.0M;
 
             return carValue;
-        }
+        }*/
     }
-    class Car{
+    /*class Car{
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
@@ -326,5 +342,6 @@ namespace Learning
             else
                 return carValue = 20000;
         }
-    }
+    }*/
 }
+
