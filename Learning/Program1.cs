@@ -271,16 +271,60 @@ namespace Learning
             //string myString = string.Format("{0:N}", 1234567890);
             //string myString = string.Format("{0:P}", .69);
             //string myString = string.Format("Phone Number: {0: (+###) ####-######}", 9779841123922);
+            // string myString = " Put your hands in mine  ";
+            //myString = myString.Substring(1,16);
+            //myString = myString.ToUpper();
+            //myString = myString.Replace(" ", "-");
+            //myString = String.Format("Before Length:{0}\nAfter Length:{1} ", myString.Length, myString.Trim().Length);
+            //Console.WriteLine(myString);
+            //DateTime myValue = DateTime.Now;
 
+            //Console.WriteLine(myValue.ToString());
+            //Console.WriteLine(myValue.ToShortDateString());
+            //Console.WriteLine(myValue.ToShortTimeString());
+            //Console.WriteLine(myValue.ToLongDateString());
+            //Console.WriteLine(myValue.AddDays(-7).ToLongDateString());
+            //Console.WriteLine(myValue.AddHours(12).ToShortTimeString());
+            //DateTime myBirthday = new DateTime(2002, 12, 21);
+            //Console.WriteLine(myBirthday.ToShortDateString());
+            //DateTime myBirthday = DateTime.Parse("12/21/2002");
+            /*TimeSpan myAge = DateTime.Now.Subtract(myBirthday);
+            Console.WriteLine(myAge.TotalDays);*/
 
-            Console.WriteLine(myString);
+            Car myCar = new Car();
 
-
+            myCar.Make = "Old Version";
+            myCar.Model = "Cutlas Supreme";
+            myCar.Year = 1969;
+            myCar.Color = "#000";
+            Console.WriteLine($"{myCar.Make} {myCar.Model} {myCar.Year} {myCar.Color}");
+            //decimal value = DetermineMarketvalue(myCar);
+            //Console.WriteLine("{0:C}", value);
+            Console.WriteLine("{0:C}", myCar.DetermineMarketValue());
 
             Console.ReadLine();
+        }
 
+        private static decimal DetermineMarketvalue (Car car)
+        {
+            decimal carValue = 10000.0M;
 
+            return carValue;
+        }
+    }
+    class Car{
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public string Color { get; set; }
 
+        public decimal DetermineMarketValue()
+        {
+            decimal carValue;
+            if (Year > 1990)
+                return carValue = 10000;
+            else
+                return carValue = 20000;
         }
     }
 }
