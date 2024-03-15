@@ -22,5 +22,15 @@ namespace ObjectLifeTime
             this.Year = year;
             this.Color = color;
         }
+
+        public void publicMethod()
+        {
+            Console.WriteLine(privateMethod());
+            //Console.WriteLine(Make);
+        }
+        private string privateMethod()
+        {
+            return "Call Private Method()";
+        }
     }
 }

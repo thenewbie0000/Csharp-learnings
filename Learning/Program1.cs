@@ -1,10 +1,14 @@
 ﻿using System;
 using ObjectLifeTime;
+using ScopeP3;
 
 namespace Learning
 {
     public class Program
     {
+
+        //private field
+        private static string k = "";
 
         // ---------- FUNCTIONS DEFINITIONS --------
 
@@ -315,12 +319,38 @@ namespace Learning
             Console.WriteLine($"{myOtherCar.Make} {myOtherCar.Model} {myOtherCar.Year} {myOtherCar.Color}");
             //myOtherCar = null;
             //Console.WriteLine($"{myOtherCar.Make} {myOtherCar.Model} {myOtherCar.Year} {myOtherCar.Color}");*/
-            Car thirdCar = new Car("Ford", "Escape", 2005, "#fff");
+            //Car thirdCar = new Car("Ford", "Escape", 2005, "#fff");
+            //Car.myMethod();
 
 
+            /*string j = "";
+            for (int i = 0; i < 10; i++)
+            {
+                j = i.ToString();
+                k = i.ToString();
+                Console.WriteLine(i);
+                if (i == 9)
+                {
+                    string l = i.ToString();
+                }
+                // Console.WriteLine(l);
+            }
+
+            Console.WriteLine($"Outside of Loop: {j}");
+            Console.WriteLine($"Outside of Loop: {k}");
+            HelperMethod();*/
+            //ScopeExample.Scope();
+
+
+            Car myCar = new Car();
+            myCar.publicMethod();
             Console.ReadLine();
         }
 
+        static void HelperMethod()
+        {
+            Console.WriteLine("Value of K from Helper Method is {0}", k);
+        }
         /*private static decimal DetermineMarketvalue (Car car)
         {
             decimal carValue = 10000.0M;
