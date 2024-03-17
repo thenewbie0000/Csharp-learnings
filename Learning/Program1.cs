@@ -1,6 +1,8 @@
 ﻿using System;
 using ObjectLifeTime;
 using ScopeP3;
+using System.IO;
+using System.Net;
 
 namespace Learning
 {
@@ -8,7 +10,7 @@ namespace Learning
     {
 
         //private field
-        private static string k = "";
+        // private static string k = "";
 
         // ---------- FUNCTIONS DEFINITIONS --------
 
@@ -342,15 +344,28 @@ namespace Learning
             //ScopeExample.Scope();
 
 
-            Car myCar = new Car();
-            myCar.publicMethod();
-            Console.ReadLine();
-        }
+            /* Car myCar = new Car();
+             myCar.publicMethod();
+             Console.ReadLine();*/
 
-        static void HelperMethod()
-        {
-            Console.WriteLine("Value of K from Helper Method is {0}", k);
+
+            string text = " (Edited File)Hello! I am Rojesh Shrestha(25675/077) from Amrit Science Campus";
+            File.WriteAllText(@"C:\Users\V I C T U S\Desktop\one.txt", text);
+            string address = "http://msdn.microsoft.com";
+
+            WebClient client = new WebClient();
+            string reply = client.DownloadString(address);
+            Console.WriteLine(reply);
+            File.WriteAllText(@"C:\Users\V I C T U S\Desktop\one.txt", reply);
+            Console.ReadLine();
+
+
         }
+        /*
+                static void HelperMethod()
+                {
+                    Console.WriteLine("Value of K from Helper Method is {0}", k);
+                }*/
         /*private static decimal DetermineMarketvalue (Car car)
         {
             decimal carValue = 10000.0M;
